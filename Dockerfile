@@ -1,7 +1,8 @@
 FROM debian
-COPY test.sh /home/test/
-COPY file1_lab /home/test/
-COPY file2_lab /home/test/
-RUN useradd user1
-RUN chown user1:user1 /home/test/file1_lab
-cmd su - user1
+RUN apt update
+RUN apt upgrade
+RUN apt install build-essential -y
+RUN mkdir /home/746-saa1
+COPY lab4.cpp /home/746-saa1/lab4.cpp 
+COPY lab4_1.cpp /home/746-saa1/lab4_1.cpp
+COPY dir_lab4 /home/746-saa1/dir_lab4
